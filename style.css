@@ -1,0 +1,242 @@
+/* Importar tipografía Poppins desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Resetea márgenes y paddings por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo para el header */
+.navbar {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #ffffff; /* Fondo blanco para un look limpio */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    position: sticky; /* Fija el navbar en la parte superior al hacer scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+/* Contenedor de la barra de navegación */
+.nav-container {
+    display: flex;
+    justify-content: space-between; /* Logo a la izquierda, nav al centro, íconos a la derecha */
+    align-items: center;
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* Estilo para el logo */
+.logo {
+    font-size: 28px;
+    font-weight: 600;
+    color: #007bff; /* Color azul para "Álvaro" */
+    font-weight: 700;
+}
+
+.logo span {
+    color: #1a1a1a; /* Color negro para "Álvaro" */
+    font-weight: 700;
+}
+
+/* Estilo para los enlaces de navegación */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px; /* Más espacio entre enlaces */
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
+
+/* Estilo para los íconos */
+.icons {
+    display: flex;
+    gap: 15px; /* Espacio entre íconos */
+    margin-right: -10px; /* Mueve los íconos más cerca del borde derecho */
+}
+
+/* Asegurar que las imágenes no tengan márgenes adicionales */
+.icons a img {
+    display: block; /* Elimina cualquier espacio inferior */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icons a img:hover {
+    transform: scale(1.2); /* Aumenta ligeramente el tamaño */
+    opacity: 0.8; /* Reduce opacidad para un efecto sutil */
+}
+
+
+/* Estilo para el contenido del encabezado (h2 y h3) */
+.header-content {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%); /* Fondo degradado suave */
+}
+
+.header-content h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.header-content h3 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .icons {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .header-content h2 {
+        font-size: 36px;
+    }
+
+    .header-content h3 {
+        font-size: 18px;
+    }
+}
+
+
+/* Estilo para la sección parent */
+/* Estilo para la sección parent (aumentando la separación) */
+.parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 200px; 
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 50px;
+    flex-wrap: wrap;
+}
+
+/* Estilo para el texto */
+.carrera {
+    text-align: left;
+}
+
+.carrera h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #1a1a1a; /* Negro suave para contraste */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.carrera h3 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #333333; /* Gris oscuro para el subtítulo */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.carrera p {
+    font-size: 20px;
+    font-weight: 300;
+    color: #666666; /* Gris medio para el párrafo */
+    line-height: 1.5;
+    max-width: 500px;
+}
+
+/* Estilo para la foto circular */
+.foto-alvaro {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-alvaro img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #007bff; /* Azul vibrante para combinar */
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3); /* Sombra azul suave */
+    transition: transform 0.3s ease;
+}
+
+.foto-alvaro img:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para los botones (Descargar CV y Contactame) */
+.carrera .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 10px 10px 0;
+    border: none;
+    border-radius: 25px;
+    background-color: #007bff; /* Azul coherente */
+    color: #ffffff; /* Texto blanco para contraste */
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carrera .btn:hover {
+    background-color: #0056b3; /* Azul más oscuro al hover */
+    transform: translateY(-2px);
+}
+
+/* Estilo para los íconos sociales */
+.carrera .social-icons {
+    margin-top: 20px;
+}
+
+.carrera .social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #666666; /* Gris para los íconos */
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.carrera .social-icons a:hover {
+    color: #007bff; /* Azul al hover */
+}
+        
+    
