@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desarrollador</title>
+    <title>Alvaro Madrid - Desarrollador</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
     <header class="navbar">
         <div class="nav-container">
             <div class="logo">Dev <span>Alvaro</span></div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
@@ -21,44 +24,169 @@
                 </ul>
             </nav>
             <div class="icons">
-                <a href="#"><img src="./img/in.png" alt="LinkedIn" height="40" width="40"></a>
-                <a href="#"><img src="./img/github.svg" alt="GitHub" height="40" width="40"></a>
-                <a href="#"><img src="./img/whatsapp.svg" alt="WhatsApp" height="40" width="40"></a>
+                <a href="https://www.linkedin.com/in/alvaro-madrid-morales-506532318/" target="_blank"
+                    aria-label="Visitar perfil de LinkedIn de Álvaro"><img src="./img/in.png" alt="LinkedIn"></a>
+                <a href="https://github.com/Metrasta214" target="_blank"
+                    aria-label="Visitar perfil de GitHub de Álvaro"><img src="./img/github.svg" alt="GitHub"></a>
+                <a href="https://wa.me/527711127364" target="_blank" aria-label="Contactar a Álvaro por WhatsApp"><img
+                        src="./img/whatsapp.svg" alt="WhatsApp"></a>
             </div>
         </div>
     </header>
 
-    <section id="inicio">
+    <section id="inicio" class="hero">
+        <div class="hero-text">
+            <p class="intro">Hola Mundo, Soy Alvaro</p>
+            <h1>Ingeniero en Tecnologías de la Información y <span>Desarrollador Web</span></h1>
+            <p class="descripcion">Apasionado por crear soluciones digitales innovadoras y funcionales que impacten
+                positivamente al usuario final.</p>
+            <div class="botones">
+                <a href="cv.pdf" download class="btn-descargar">Descargar CV</a>
+                <a href="#contacto" class="btn-contacto">Contáctame</a>
+            </div>
+            <div class="redes">
+                <a href="#"><img src="./img/in.png" alt="LinkedIn" /></a>
+                <a href="#"><img src="./img/github.svg" alt="GitHub" /></a>
+                <a href="#"><img src="./img/whatsapp.svg" alt="TikTok" /></a>
+            </div>
+        </div>
+        <div class="hero-img">
+            <img src="./img/Alvaro.jpg" alt="Foto Álvaro" />
+        </div>
+    </section>
+
+    <section id="sobre-mi">
         <div class="parent">
-            <div class="carrera">
-                <h1>Alvaro Madrid</h1>
-                <h1>Morales</h1>
-                <h3>Ingeniero en tecnologías de la</h3>
-                <h3>información y comunicaciones</h3>
-                <br>
-                <p>Hola, mi nombre es Alvaro y soy un apasionado por crear
-                    y desarrollar soluciones digitales, innovadoras y funcionales;
-                    todo esto para lograr la satisfacción del usuario final.</p>
-                <!-- Botones -->
-                <a href="" class="btn">Descargar CV</a>
-                <a href="#" class="btn">Contáctame</a>
-                <!-- Íconos sociales -->
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/alvaro-madrid-morales-506532318/" target="_blank"><img
-                            src="./img/in.png" alt="LinkedIn" height="40" width="40"></a>
-                    <!-- Ejemplo de ícono LinkedIn con Font Awesome -->
-                    <a href="https://github.com/Metrasta214" target="_blank"><img src="./img/github.svg" alt="github"
-                            height="40" width="40"></a> <!-- Ejemplo de ícono GitHub con Font Awesome -->
-                    <a href="7711127364" target="_blank"><img src="./img/whatsapp.svg" alt="WhatsApp" height="40"
-                            width="40"></a> <!-- Ejemplo de ícono WhatsApp con Font Awesome -->
+            <h1>Sobre Mí</h1>
+            <div class="container-tarjetas">
+                <div class="tarjeta">
+                    <img src="img/Alvaro Madrid Morales.jpg" alt="Foto de Álvaro Madrid" class="img-fondo" />
+                    <div class="tarjeta-contenido">
+                        <h2><i class="fas fa-user"></i> ¿Quién Soy?</h2>
+                        <p>Soy un Ingeniero en ITIC’s, altamente motivado con sólidos conocimientos en desarrollo de
+                            software, diseño de interfaces web y bases de datos.</p>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <img src="img/Desarrollador.jpg" alt="Mi Objetivo" class="img-fondo" />
+                    <div class="tarjeta-contenido">
+                        <h2><i class="fas fa-bullseye"></i> Mi Objetivo</h2>
+                        <p>Mi objetivo es seguir aprendiendo y aplicar mis conocimientos actuales para ganar experiencia
+                            en áreas como Front-end y Back-end. Me apasiona crear soluciones elegantes para problemas
+                            complejos.</p>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <img src="img/Adaptación.png" alt="Mi Perfil" class="img-fondo" />
+                    <div class="tarjeta-contenido">
+                        <h2><i class="fas fa-id-card"></i> Mi Perfil</h2>
+                        <p>Me caracterizo por mi capacidad para adaptarme rápidamente a nuevos entornos de trabajo y
+                            tecnologías, mi atención al detalle y mi compromiso con la entrega de productos de alta
+                            calidad.</p>
+                    </div>
                 </div>
             </div>
-            <div class="foto-alvaro">
-                <img src="./img/Alvaro.jpg" alt="imagen" title="Alvaro Desarrollador" width="700" height="600">
+            <div class="habilidades-tecnicas">
+                <h2>Mis Habilidades Técnicas</h2>
+                <div class="habilidad">
+                    <img src="img/html5.png" alt="HTML5">
+                    <p>HTML5</p>
+                </div>
+                <div class="habilidad">
+                    <img src="img/css3.png" alt="CSS3">
+                    <p>CSS3</p>
+                </div>
+                <div class="habilidad">
+                    <img src="img/javascript.png" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+                <div class="habilidad">
+                    <img src="img/Python.jpeg" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div class="habilidad">
+                    <img src="img/sql.svg" alt="SQL">
+                    <p>SQL</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <section id="proyectos">
+        <div class="parent">
+            <h1>Proyectos</h1>
+            <div class="container-tarjetas">
+                <div class="tarjeta">
+                    <img src="img/proyecto1.jpg" alt="Proyecto 1" class="img-fondo" />
+                    <div class="tarjeta-contenido">
+                        <h2>Proyecto 1</h2>
+                        <p>Descripción breve de un proyecto innovador desarrollado con tecnologías modernas.</p>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <img src="img/proyecto2.jpg" alt="Proyecto 2" class="img-fondo" />
+                    <div class="tarjeta-contenido">
+                        <h2>Proyecto 2</h2>
+                        <p>Aplicación web creada para resolver un problema específico con un enfoque en usabilidad.</p>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <img src="img/proyecto3.jpg" alt="Proyecto 3" class="img-fondo" />
+                    <div class="tarjeta-contenido">
+                        <h2>Proyecto 3</h2>
+                        <p>Sistema backend optimizado para gestionar grandes volúmenes de datos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto-section">
+  <div class="parent contacto-container">
+    <div class="formulario">
+      <h1>Contacto</h1>
+      <form class="contact-form" action="https://formspree.io/f/xyzpnnvb" method="POST">
+        <div class="form-group">
+          <label for="nombre">Nombre / Empresa</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
+
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="_next" value="https://tusitio.com/gracias.html" />
+
+        <button type="submit" class="btn">Enviar Mensaje</button>
+      </form>
+    </div>
+
+    <div class="ilustracion">
+      <img src="img/Alvaro Madrid Morales.jpg" alt="Contacto Ilustración" />
+    </div>
+  </div>
+</section>
+
+
+
+    <footer>
+        <div class="parent">
+            <p>&copy; 2025 Alvaro Madrid Morales</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/alvaro-madrid-morales-506532318/" target="_blank"
+                aria-label="Visitar perfil de LinkedIn de Álvaro"><img src="./img/in.png" alt="LinkedIn"></a>
+            <a href="https://github.com/Metrasta214" target="_blank"
+                aria-label="Visitar perfil de GitHub de Álvaro"><img src="./img/github.svg" alt="GitHub"></a>
+            <a href="https://wa.me/527711127364" target="_blank" aria-label="Contactar a Álvaro por WhatsApp"><img
+                    src="./img/whatsapp.svg" alt="WhatsApp"></a>
+        </div>
+    </footer>
 </body>
 
 </html>
