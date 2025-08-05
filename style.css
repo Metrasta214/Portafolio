@@ -1,7 +1,135 @@
-/* Importar tipografía Poppins desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Resetea márgenes y paddings por defecto */
+/* Sección Hero */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  background-color: #f4f9ff;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.intro {
+  font-size: 20px;
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.hero h1 span {
+  color: #007bff;
+}
+
+.descripcion {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.botones {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.btn-descargar,
+.btn-contacto {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-descargar {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-contacto {
+  background-color: #fff;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.btn-descargar:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.btn-contacto:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.redes {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.redes img {
+  width: 32px;
+  height: 32px;
+  filter: grayscale(100%) brightness(0.6);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.redes img:hover {
+  filter: brightness(1) sepia(100%) hue-rotate(190deg) saturate(500%);
+  transform: scale(1.1);
+}
+
+/* Imagen del héroe */
+.hero-img img {
+  width: 300px;
+  border-radius: 50%;
+  border: 5px solid #007bff;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  transition: transform 0.3s ease;
+}
+
+.hero-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img {
+    margin-top: 40px;
+  }
+
+  .nav-links {
+    display: none; /* Ajuste si agregas menú hamburguesa */
+  }
+}
+
+/* Resetea márgenes y paddings */
 * {
     margin: 0;
     padding: 0;
@@ -9,44 +137,51 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Estilo para el header */
+/* Animación de fade-in para secciones */
+section {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Navbar */
 .navbar {
     width: 100%;
     padding: 15px 20px;
-    background-color: #ffffff; /* Fondo blanco para un look limpio */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    position: sticky; /* Fija el navbar en la parte superior al hacer scroll */
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* Contenedor de la barra de navegación */
 .nav-container {
     display: flex;
-    justify-content: space-between; /* Logo a la izquierda, nav al centro, íconos a la derecha */
+    justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Ancho máximo */
-    margin: 0 auto; /* Centra el contenedor */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
-/* Estilo para el logo */
 .logo {
     font-size: 28px;
     font-weight: 600;
-    color: #007bff; /* Color azul para "Álvaro" */
-    font-weight: 700;
+    color: #007bff;
 }
 
 .logo span {
-    color: #1a1a1a; /* Color negro para "Álvaro" */
+    color: #1a1a1a;
     font-weight: 700;
 }
 
-/* Estilo para los enlaces de navegación */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 40px; /* Más espacio entre enlaces */
+    gap: 40px;
     flex-grow: 1;
     justify-content: center;
 }
@@ -61,93 +196,51 @@
 
 .nav-links li a:hover {
     color: #007bff;
-    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+    transform: translateY(-2px);
 }
 
-/* Estilo para los íconos */
 .icons {
     display: flex;
-    gap: 15px; /* Espacio entre íconos */
-    margin-right: -10px; /* Mueve los íconos más cerca del borde derecho */
+    gap: 15px;
 }
 
-/* Asegurar que las imágenes no tengan márgenes adicionales */
 .icons a img {
-    display: block; /* Elimina cualquier espacio inferior */
+    width: 32px;
+    height: 32px;
+    display: block;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    filter: grayscale(100%) brightness(0.6);
 }
 
 .icons a img:hover {
-    transform: scale(1.2); /* Aumenta ligeramente el tamaño */
-    opacity: 0.8; /* Reduce opacidad para un efecto sutil */
+    transform: scale(1.2);
+    opacity: 0.8;
+    filter: brightness(1) sepia(100%) hue-rotate(190deg) saturate(500%);
 }
 
-
-/* Estilo para el contenido del encabezado (h2 y h3) */
-.header-content {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 100%); /* Fondo degradado suave */
-}
-
-.header-content h2 {
-    font-size: 48px;
-    font-weight: 700;
-    color: #1a1a1a;
-    line-height: 1.2;
-    margin-bottom: 10px;
-}
-
-.header-content h3 {
+.menu-toggle {
+    display: none;
     font-size: 24px;
-    font-weight: 400;
-    color: #555;
-    line-height: 1.4;
+    cursor: pointer;
+    color: #333;
 }
 
-/* Media query para pantallas pequeñas */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 15px;
-        padding: 10px 0;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-
-    .icons {
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .header-content h2 {
-        font-size: 36px;
-    }
-
-    .header-content h3 {
-        font-size: 18px;
-    }
+/* Sección Inicio */
+#inicio {
+    margin-top: 80px;
 }
 
-
-/* Estilo para la sección parent */
-/* Estilo para la sección parent (aumentando la separación) */
 .parent {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 200px; 
+    gap: 50px;
     max-width: 1200px;
     margin: 40px auto;
-    padding: 0 50px;
+    padding: 0 20px;
     flex-wrap: wrap;
 }
 
-/* Estilo para el texto */
 .carrera {
     text-align: left;
 }
@@ -155,7 +248,7 @@
 .carrera h1 {
     font-size: 60px;
     font-weight: 700;
-    color: #1a1a1a; /* Negro suave para contraste */
+    color: #1a1a1a;
     text-transform: uppercase;
     letter-spacing: 2px;
     line-height: 1.1;
@@ -165,7 +258,7 @@
 .carrera h3 {
     font-size: 32px;
     font-weight: 400;
-    color: #333333; /* Gris oscuro para el subtítulo */
+    color: #333333;
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1.2;
@@ -174,26 +267,20 @@
 .carrera p {
     font-size: 20px;
     font-weight: 300;
-    color: #666666; /* Gris medio para el párrafo */
+    color: #666666;
     line-height: 1.5;
     max-width: 500px;
 }
 
-/* Estilo para la foto circular */
-.foto-alvaro {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .foto-alvaro img {
+    max-width: 100%;
     width: 300px;
-    height: 300px;
+    height: auto;
+    aspect-ratio: 1/1;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid #007bff; /* Azul vibrante para combinar */
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3); /* Sombra azul suave */
+    border: 5px solid #007bff;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
     transition: transform 0.3s ease;
 }
 
@@ -201,15 +288,15 @@
     transform: scale(1.05);
 }
 
-/* Estilo para los botones (Descargar CV y Contactame) */
 .carrera .btn {
+    margin-top: 20px;
     display: inline-block;
     padding: 10px 20px;
-    margin: 10px 10px 10px 0;
+    margin: 5px 5px 5px 20px;
     border: none;
     border-radius: 25px;
-    background-color: #007bff; /* Azul coherente */
-    color: #ffffff; /* Texto blanco para contraste */
+    background-color: #007bff;
+    color: #ffffff;
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
@@ -218,25 +305,396 @@
 }
 
 .carrera .btn:hover {
-    background-color: #0056b3; /* Azul más oscuro al hover */
+    background-color: #0056b3;
     transform: translateY(-2px);
 }
 
-/* Estilo para los íconos sociales */
 .carrera .social-icons {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
-.carrera .social-icons a {
+.carrera .social-icons a img {
+    width: 32px;
+    height: 32px;
+    margin-right: 18px;
+    filter: grayscale(100%) brightness(0.6);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.carrera .social-icons a img:hover {
+    filter: brightness(1) sepia(100%) hue-rotate(190deg) saturate(500%);
+    transform: scale(1.1);
+}
+
+/* Sección Sobre Mí */
+#sobre-mi {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+#sobre-mi .parent {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#sobre-mi h1, #proyectos h1, #contacto h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+    border-bottom: 2px solid #4fc3f7;
     display: inline-block;
-    margin-right: 10px;
-    color: #666666; /* Gris para los íconos */
-    font-size: 18px;
-    transition: color 0.3s ease;
 }
 
-.carrera .social-icons a:hover {
-    color: #007bff; /* Azul al hover */
+.container-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
 }
-        
-    
+
+.tarjeta {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.img-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: filter 0.5s ease;
+}
+
+.tarjeta:hover .img-fondo {
+    filter: blur(3px) brightness(0.5);
+}
+
+.tarjeta-contenido {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    transition: background 0.3s ease;
+}
+
+.tarjeta-contenido h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #4fc3f7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tarjeta-contenido p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Habilidades Técnicas */
+.habilidades-tecnicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 40px;
+}
+
+.habilidad {
+    text-align: center;
+}
+
+.habilidad img {
+    width: 50px;
+    height: 50px;
+}
+
+.habilidad p {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Sección Contacto */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form .btn {
+    align-self: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer .social-icons a img {
+    width: 28px;
+    height: 28px;
+    filter: grayscale(100%) brightness(0.6);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a img:hover {
+    filter: brightness(1) sepia(100%) hue-rotate(190deg) saturate(500%);
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .parent {
+        gap: 30px;
+    }
+
+    .foto-alvaro img {
+        width: 250px;
+    }
+
+    .tarjeta {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .icons {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .carrera h1 {
+        font-size: 48px;
+    }
+
+    .carrera h3 {
+        font-size: 24px;
+    }
+
+    .foto-alvaro img {
+        width: 200px;
+    }
+
+    #sobre-mi h1, #proyectos h1, #contacto h1 {
+        font-size: 2rem;
+    }
+
+    .tarjeta {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Sección Contacto mejorada */
+.contacto-section {
+  background-color: #f4f9ff;
+  padding: 80px 10%;
+}
+
+.contacto-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.formulario {
+  flex: 1;
+  min-width: 300px;
+}
+
+.formulario h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.ilustracion {
+  flex: 1;
+  text-align: center;
+}
+
+.ilustracion img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contacto-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .contact-form .btn {
+    align-self: center;
+  }
+}
